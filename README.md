@@ -10,6 +10,12 @@ This is a wrapper for the [Marvel API](https://developer.marvel.com/docs) that r
   - Stories
   - Events
 
+- Comics
+  - Characters
+  - Creators
+  - Events
+  - Stories
+
 ## Installation
 
 ```
