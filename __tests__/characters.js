@@ -4,7 +4,7 @@ let marvelClient;
 
 describe('characters', () => {
   beforeEach(() => {
-    marvelClient = Marvel({ apiKey: '6ae3b95f4925a4e32ca9789f413e43f7', privateKey: '8e94456fb554319d5fa072360987e16cb0e76f80' })
+    marvelClient = Marvel({ apiKey: process.env.API_KEY, privateKey: process.env.PRIVATE_KEY })
   })
 
   it('should retrieve the quantity of characters requested', async () => {
