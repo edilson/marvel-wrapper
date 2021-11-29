@@ -1,5 +1,7 @@
 const characters = require('./lib/characters')
 const comics = require('./lib/comics')
+const creators = require('./lib/creators')
+const events = require('./lib/events')
 
 const Marvel = ({ apiKey, privateKey }) => {
   if (!apiKey || !privateKey) {
@@ -8,7 +10,9 @@ const Marvel = ({ apiKey, privateKey }) => {
 
   return {
     characters: characters({ apiKey, privateKey }),
-    comics: comics({ apiKey, privateKey })
+    comics: comics({ apiKey, privateKey }),
+    creators: creators({ apiKey, privateKey }),
+    events: events({ apiKey, privateKey })
   }
 }
 

@@ -5,13 +5,11 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^27.0.3",
+    "dotenv": "^10.0.0",
     "jest": "^27.3.1",
     "ts-jest": "^27.0.7"
   },
   "scripts": {
     "test": "jest"
-  },
-  "dependencies": {
-    "dotenv": "^10.0.0"
   }
 }
