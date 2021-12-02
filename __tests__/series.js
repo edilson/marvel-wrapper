@@ -7,7 +7,7 @@ describe('series', () => {
     marvelClient = Marvel({ apiKey: process.env.API_KEY, privateKey: process.env.PRIVATE_KEY })
   })
 
-  it('should retrieve the quantity of characters requested', async () => {
+  it('should retrieve the quantity of series requested', async () => {
     const seriesResponse = await marvelClient.series.get()
 
     expect(seriesResponse.code).toEqual(200)
