@@ -13,7 +13,7 @@ describe('creators', () => {
       offset: 0
     }
 
-    const creatorsResponse = await marvelClient.creators.getCreators(params)
+    const creatorsResponse = await marvelClient.creators.get(params)
 
     expect(creatorsResponse.code).toEqual(200)
     expect(creatorsResponse.status).toBe('Ok')
@@ -24,7 +24,7 @@ describe('creators', () => {
   })
 
   it('should retrieve the detailed info about the creator requested', async () => {
-    const creatorFound = await marvelClient.creators.getCreatorById({ creatorId: 682 })
+    const creatorFound = await marvelClient.creators.getById(682)
 
     expect(creatorFound.code).toEqual(200)
     expect(creatorFound.status).toBe('Ok')
@@ -37,13 +37,14 @@ describe('creators', () => {
   })
 
   it('should retrieve the comics of a creator', async () => {
+    const creatorId = 326
+
     const params = {
-      creatorId: 326,
       limit: 3,
       offset: 0
     }
 
-    const comicsOfACreatorResponse = await marvelClient.creators.getCreatorComics(params)
+    const comicsOfACreatorResponse = await marvelClient.creators.getComics(creatorId, params)
 
     expect(comicsOfACreatorResponse.code).toEqual(200)
     expect(comicsOfACreatorResponse.status).toBe('Ok')
@@ -54,13 +55,14 @@ describe('creators', () => {
   })
 
   it('should retrieve the events of a creator', async () => {
+    const creatorId = 682
+
     const params = {
-      creatorId: 682,
       limit: 1,
       offset: 0
     }
 
-    const creatorEventsResponse = await marvelClient.creators.getCreatorEvents(params)
+    const creatorEventsResponse = await marvelClient.creators.getEvents(creatorId, params)
 
     expect(creatorEventsResponse.code).toEqual(200)
     expect(creatorEventsResponse.status).toBe('Ok')
@@ -71,13 +73,14 @@ describe('creators', () => {
   })
 
   it('should retrieve the series of a creator', async () => {
+    const creatorId = 682
+
     const params = {
-      creatorId: 682,
       limit: 25,
       offset: 0
     }
 
-    const creatorSeriesResponse = await marvelClient.creators.getCreatorSeries(params)
+    const creatorSeriesResponse = await marvelClient.creators.getSeries(creatorId, params)
 
     expect(creatorSeriesResponse.code).toEqual(200)
     expect(creatorSeriesResponse.status).toBe('Ok')
@@ -88,13 +91,14 @@ describe('creators', () => {
   })
 
   it('should retrieve the stories of a creator', async () => {
+    const creatorId = 682
+
     const params = {
-      creatorId: 682,
       limit: 45,
       offset: 0
     }
 
-    const creatorStoriesResponse = await marvelClient.creators.getCreatorStories(params)
+    const creatorStoriesResponse = await marvelClient.creators.getStories(creatorId, params)
 
     expect(creatorStoriesResponse.code).toEqual(200)
     expect(creatorStoriesResponse.status).toBe('Ok')

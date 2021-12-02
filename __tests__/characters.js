@@ -13,7 +13,7 @@ describe('characters', () => {
       offset: 1
     }
 
-    const charactersResponse = await marvelClient.characters.getCharacters(params)
+    const charactersResponse = await marvelClient.characters.get(params)
 
     expect(charactersResponse.code).toEqual(200)
     expect(charactersResponse.status).toBe('Ok')
@@ -24,7 +24,7 @@ describe('characters', () => {
   })
 
   it('should retrieve the detailed info about the character requested', async () => {
-    const characterFound = await marvelClient.characters.getCharacterById({ characterId: 1017100 })
+    const characterFound = await marvelClient.characters.getById(1017100)
 
     expect(characterFound.code).toEqual(200)
     expect(characterFound.status).toBe('Ok')
@@ -37,13 +37,14 @@ describe('characters', () => {
   })
 
   it('should retrieve the comics of a character', async () => {
+    const characterId = 1009351
+
     const params = {
-      characterId: 1009351,
       limit: 45,
       offset: 1
     }
 
-    const comicsOfTheCharacterResponse = await marvelClient.characters.getComicsOfACharacter(params)
+    const comicsOfTheCharacterResponse = await marvelClient.characters.getComics(characterId, params)
 
     expect(comicsOfTheCharacterResponse.code).toEqual(200)
     expect(comicsOfTheCharacterResponse.status).toBe('Ok')
@@ -54,13 +55,14 @@ describe('characters', () => {
   })
 
   it('should retrieve the events of a character', async () => {
+    const characterId = 1009351
+
     const params = {
-      characterId: 1009351,
       limit: 10,
       offset: 1
     }
 
-    const eventsOfTheCharacterResponse = await marvelClient.characters.getEventsOfACharacter(params)
+    const eventsOfTheCharacterResponse = await marvelClient.characters.getEvents(characterId, params)
 
     expect(eventsOfTheCharacterResponse.code).toEqual(200)
     expect(eventsOfTheCharacterResponse.status).toBe('Ok')
@@ -71,13 +73,14 @@ describe('characters', () => {
   })
 
   it('should retrieve the series of a character', async () => {
+    const characterId = 1009351
+
     const params = {
-      characterId: 1009351,
       limit: 50,
       offset: 1
     }
 
-    const seriesOfTheCharacterResponse = await marvelClient.characters.getSeriesOfACharacter(params)
+    const seriesOfTheCharacterResponse = await marvelClient.characters.getSeries(characterId, params)
 
     expect(seriesOfTheCharacterResponse.code).toEqual(200)
     expect(seriesOfTheCharacterResponse.status).toBe('Ok')
@@ -88,13 +91,14 @@ describe('characters', () => {
   })
 
   it('should retrieve the stories of a character', async () => {
+    const characterId = 1009351
+
     const params = {
-      characterId: 1009351,
       limit: 25,
       offset: 1
     }
 
-    const storiesOfTheCharacterResponse = await marvelClient.characters.getStoriesOfACharacter(params)
+    const storiesOfTheCharacterResponse = await marvelClient.characters.getStories(characterId, params)
 
     expect(storiesOfTheCharacterResponse.code).toEqual(200)
     expect(storiesOfTheCharacterResponse.status).toBe('Ok')

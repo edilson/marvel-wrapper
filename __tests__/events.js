@@ -13,7 +13,7 @@ describe('events', () => {
       offset: 0
     }
 
-    const eventsResponse = await marvelClient.events.getEvents(params)
+    const eventsResponse = await marvelClient.events.get(params)
 
     expect(eventsResponse.code).toEqual(200)
     expect(eventsResponse.status).toBe('Ok')
@@ -24,7 +24,7 @@ describe('events', () => {
   })
 
   it('should retrieve the detailed info about the event requested', async () => {
-    const eventFound = await marvelClient.events.getEventById({ eventId: 154 })
+    const eventFound = await marvelClient.events.getById(154)
 
     expect(eventFound.code).toEqual(200)
     expect(eventFound.status).toBe('Ok')
@@ -37,13 +37,14 @@ describe('events', () => {
   })
 
   it('should retrieve the comics of an event', async () => {
+    const eventId = 154
+
     const params = {
-      eventId: 154,
       limit: 25,
       offset: 0
     }
 
-    const eventComicsResponse = await marvelClient.events.getEventComics(params)
+    const eventComicsResponse = await marvelClient.events.getComics(eventId, params)
 
     expect(eventComicsResponse.code).toEqual(200)
     expect(eventComicsResponse.status).toBe('Ok')
@@ -54,13 +55,14 @@ describe('events', () => {
   })
 
   it('should retrieve the characters of an event', async () => {
+    const eventId = 154
+
     const params = {
-      eventId: 154,
       limit: 60,
       offset: 0
     }
 
-    const eventCharactersResponse = await marvelClient.events.getEventCharacters(params)
+    const eventCharactersResponse = await marvelClient.events.getCharacters(eventId, params)
 
     expect(eventCharactersResponse.code).toEqual(200)
     expect(eventCharactersResponse.status).toBe('Ok')
@@ -71,13 +73,14 @@ describe('events', () => {
   })
 
   it('should retrieve the creators of an event', async () => {
+    const eventId = 154
+
     const params = {
-      eventId: 154,
       limit: 10,
       offset: 0
     }
 
-    const eventCreatorsResponse = await marvelClient.events.getEventCreators(params)
+    const eventCreatorsResponse = await marvelClient.events.getCreators(eventId, params)
 
     expect(eventCreatorsResponse.code).toEqual(200)
     expect(eventCreatorsResponse.status).toBe('Ok')
@@ -88,13 +91,14 @@ describe('events', () => {
   })
 
   it('should retrieve the series of an event', async () => {
+    const eventId = 154
+
     const params = {
-      eventId: 154,
       limit: 25,
       offset: 0
     }
 
-    const eventSeriesResponse = await marvelClient.events.getEventSeries(params)
+    const eventSeriesResponse = await marvelClient.events.getSeries(eventId, params)
 
     expect(eventSeriesResponse.code).toEqual(200)
     expect(eventSeriesResponse.status).toBe('Ok')
@@ -105,13 +109,14 @@ describe('events', () => {
   })
 
   it('should retrieve the stories of an event', async () => {
+    const eventId = 154
+
     const params = {
-      eventId: 154,
       limit: 55,
       offset: 0
     }
 
-    const eventStoriesResponse = await marvelClient.events.getEventStories(params)
+    const eventStoriesResponse = await marvelClient.events.getStories(eventId, params)
 
     expect(eventStoriesResponse.code).toEqual(200)
     expect(eventStoriesResponse.status).toBe('Ok')

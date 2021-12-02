@@ -13,7 +13,7 @@ describe('comics', () => {
       offset: 1
     }
 
-    const comicsResponse = await marvelClient.comics.getComics(params)
+    const comicsResponse = await marvelClient.comics.get(params)
 
     expect(comicsResponse.code).toEqual(200)
     expect(comicsResponse.status).toBe('Ok')
@@ -24,7 +24,7 @@ describe('comics', () => {
   })
 
   it('should retrieve the detailed info about the comic requested', async () => {
-    const comicFound = await marvelClient.comics.getComicById({ comicId: 428 })
+    const comicFound = await marvelClient.comics.getById(428)
 
     expect(comicFound.code).toEqual(200)
     expect(comicFound.status).toBe('Ok')
@@ -37,13 +37,14 @@ describe('comics', () => {
   })
 
   it('should retrieve the characters of a comic', async () => {
+    const comicId = 158
+
     const params = {
-      comicId: 158,
       limit: 3,
       offset: 1
     }
 
-    const charactersOfAComicResponse = await marvelClient.comics.getCharactersOfAComic(params)
+    const charactersOfAComicResponse = await marvelClient.comics.getCharacters(comicId, params)
 
     expect(charactersOfAComicResponse.code).toEqual(200)
     expect(charactersOfAComicResponse.status).toBe('Ok')
@@ -54,13 +55,14 @@ describe('comics', () => {
   })
 
   it('should retrieve the creators of a comic', async () => {
+    const comicId = 158
+
     const params = {
-      comicId: 158,
       limit: 7,
       offset: 1
     }
 
-    const creatorsOfAComicResponse = await marvelClient.comics.getCreatorsOfAComic(params)
+    const creatorsOfAComicResponse = await marvelClient.comics.getCreators(comicId, params)
 
     expect(creatorsOfAComicResponse.code).toEqual(200)
     expect(creatorsOfAComicResponse.status).toBe('Ok')
@@ -71,13 +73,14 @@ describe('comics', () => {
   })
 
   it('should retrieve the stories of a comic', async () => {
+    const comicId = 1308
+
     const params = {
-      comicId: 1308,
       limit: 8,
       offset: 1
     }
 
-    const storiesOfTheComicResponse = await marvelClient.comics.getStoriesOfAComic(params)
+    const storiesOfTheComicResponse = await marvelClient.comics.getStories(comicId, params)
 
     expect(storiesOfTheComicResponse.code).toEqual(200)
     expect(storiesOfTheComicResponse.status).toBe('Ok')
