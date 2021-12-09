@@ -1,0 +1,25 @@
+version: 2.1
+
+jobs:
+  build:
+    working_directory: ~/marvel-wrapper
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install dependencies
+          command: yarn
+      - save_cache:
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+      - run:
+          name: Run tests
+          command: yarn test
+      - store_artifacts:
+          path: coverage
+          prefix: coverage
