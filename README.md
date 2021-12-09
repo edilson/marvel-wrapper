@@ -16,10 +16,37 @@ This is a wrapper for the [Marvel API](https://developer.marvel.com/docs) that r
   - Events
   - Stories
 
+- Creators
+  - Comics
+  - Events
+  - Series
+  - Stories
+
+- Events
+  - Characters
+  - Comics
+  - Creators
+  - Series
+  - Stories
+
+- Series
+  - Characters
+  - Comics
+  - Creators
+  - Events
+  - Stories
+
+- Stories
+  - Characters
+  - Comics
+  - Creators
+  - Events
+  - Series
+
 ## Installation
 
 ```
-npm i marvel-wrapper
+npm i node-marvel-api
 ```
 
 ## Usage
@@ -42,3 +69,5 @@ const Marvel = require('marvel-wrapper')
 
 Marvel.<api endpoint>.<api endpoint option>(args)
 ```
+
+Detailed info is in [RESOURCES](./docs/RESOURCES.md)
