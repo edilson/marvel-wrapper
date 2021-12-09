@@ -46,7 +46,7 @@ This is a wrapper for the [Marvel API](https://developer.marvel.com/docs) that r
 ## Installation
 
 ```
-npm i node-marvel-api
+npm i node-marvel
 ```
 
 ## Usage
@@ -54,9 +54,9 @@ npm i node-marvel-api
 First of all it's necessary to instantiate the wrapper.
 
 ```js
-marvelClient = Marvel({ 
+marvelClient = Marvel({
   apiKey: <API_KEY>,
-  privateKey: <PRIVATE_KEY> 
+  privateKey: <PRIVATE_KEY>
 })
 ```
 

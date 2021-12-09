@@ -1,6 +1,9 @@
 __tests__/
 docs/
 .env.example
+.env
+coverage/
+.circleci/
 jest.config.js
 LICENSE
 README.md

@@ -1,8 +1,22 @@
 {
   "name": "node-marvel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
+  "description": "A wrapper for the Marvel API",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edilson/marvel-wrapper.git"
+  },
+  "keywords": [
+    "marvel",
+    "node"
+  ],
+  "author": "Edilson Silva",
+  "bugs": {
+    "url": "https://github.com/edilson/marvel-wrapper/issues"
+  },
+  "homepage": "https://github.com/edilson/marvel-wrapper#readme",
   "devDependencies": {
     "@types/jest": "^27.0.3",
     "dotenv": "^10.0.0",
