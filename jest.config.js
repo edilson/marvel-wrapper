@@ -10,7 +10,6 @@ module.exports = {
     'text-summary',
     'lcov'
   ],
-  preset: 'ts-jest',
   setupFiles: ['dotenv/config'],
   testMatch: [
     "**/__tests__/**/*.[jt]s?(x)"
